@@ -500,8 +500,8 @@ class InTheGrid(MultiAgentEnv):
             #     print('##')
 
 
-
-            agent_interaction_mask, _, _, _,pairwise_mask, _ = jax.lax.fori_loop(0, num_agents, process_agent_interactions, 
+            # repeat for the number of pair indices
+            agent_interaction_mask, _, _, _,pairwise_mask, _ = jax.lax.fori_loop(0, shuffled_indices.shape[0], process_agent_interactions, 
                                                           (agent_interaction_mask,
                                                            shuffled_indices,
                                                            interact_targets,
