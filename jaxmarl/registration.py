@@ -26,6 +26,7 @@ from .environments import (
     HanabiGame,
     Overcooked,
     CoinGame,
+    InTheMatrix,
 )
 
 
@@ -106,6 +107,10 @@ def make(env_id: str, **env_kwargs):
     elif env_id == "coin_game":
         env = CoinGame(**env_kwargs)
 
+    # 9. InTheMatrix
+    elif env_id == "storm_in_the_matrix":
+        env = InTheMatrix(**env_kwargs)
+
     return env
 
 registered_envs = [
@@ -136,4 +141,5 @@ registered_envs = [
     "hanabi",
     "overcooked",
     "coin_game",
+    "storm_in_the_matrix",
 ]
